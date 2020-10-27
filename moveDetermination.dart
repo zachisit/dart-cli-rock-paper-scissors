@@ -23,9 +23,7 @@ class MoveDetermination {
     return random.nextInt(3);
   }
 
-  void generateAiMove() {
-    this.aiMove = Move.values[this.generateRandomNumber()];
-  }
+  void generateAiMove() => this.aiMove = Move.values[this.generateRandomNumber()];
 
   void determinePlayerMove(String move) {
     //@TODO check if value is inside Move enum
@@ -58,13 +56,9 @@ class MoveDetermination {
         : false;
   }
 
-  bool isDrawMove() {
-    return (this.playerMove == aiMove) ? true : false;
-  }
+  bool isDrawMove() => (this.playerMove == aiMove) ?? false;
 
-  bool isInvalidInput() {
-    return (this.playerMove == null) ? true : false;
-  }
+  bool isInvalidInput() => (this.playerMove == null) ?? false;
 
   String generateMoveResult() {
     this.determinePlayerMove(this.playerInput);
